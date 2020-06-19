@@ -1,0 +1,36 @@
+.card-container {
+  display: flex;
+  
+  flex-direction: column;
+  background-color: #8bd197;
+  border: 2px solid grey;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 2px rgba( 0, 0, 0, 0.2 );
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+/* tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5 */
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: solid black;
+}
+h2 {
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+}
+h3{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h4{
+  font-family: monospace;
+}

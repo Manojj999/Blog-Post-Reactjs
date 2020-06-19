@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import CardList from './Components/Card-List/CardList';
+import SearchBox from './Components/SearchBox/SearchBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      authors: [],
+      searchField: ''
+    }
+    
+  };
+  componentDidMount() {
+    fetch('http://localhost:3002/authors')
+      .then(response => response.json())
+      .then(author => this.setState({ authors: author }));
+  }
+
+  handleChange = (e) => {
+    this.setState({ searchField: e.target.value })
+  }
+
+  render() {
+    const {searchField , authors} = this.state;
+    const Filterauthors = authors.filter(author => 
+      author.firstName.toLowerCase().includes(searchField.toLowerCase()))
+   
+    return (
+      <div className="App">
+        <h1> Authors List</h1>
+        
+        <SearchBox placeholder='Search Authors'
+        handleChange = {this.handleChange}
+        />
+        
+        <CardList authors={Filterauthors} />
+      </div>
+    );
+  }
 }
 
 export default App;
