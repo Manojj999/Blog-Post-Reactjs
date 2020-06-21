@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Adventure Time Logo Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Adventure Time Logo Regular'), url('Adventure Time Logo.woff') format('woff');
+}
+@font-face {
+    font-family: 'Roboto Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Roboto Medium Italic'), url('Roboto-MediumItalic.woff') format('woff');
+    }
+h1{
+    font-family: 'Adventure Time Logo Regular';
+    /* color: rgb(30, 216, 117); */
+    color: rgb(136, 0, 255);
+}
+p{
+    font-family:'Roboto Medium Italic';
+}
